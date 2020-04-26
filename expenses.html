@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Expense Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+<style>
+	.hola{
+		margin-left:1200px;
+		background-color:blue;
+	}
+	.hala{
+	      	margin-left:1200px;
+		background-color:blue;}
+</style>
+</head>	
+<body>
+  <!--<nav class="navbar navbar-dark navbar-expand-sm fixed-top justify-content-right">
+    <div class="container">
+      <a class="navbar-brand mr-auto" href="#">Expense Manager</a>
+      <span class="navbar-text">
+        <li class="nav-item"><button type="button" class="btn btn-dark hola align-self-center btn-sm" >INFO</button></li>
+        <li class="nav-item"><a href="./index.html" type="button" class="btn btn-dark hala align-self-center btn-sm">LOGOUT</a></li>
+      </span>
+    </div>
+  </nav>  -->
+  
+ <div style="background-color: #001a33">
+  <a class="navbar-brand mr-auto" href="#">Expense Manager</a>
+  <ul>
+<li><button type="button" class="btn btn-dark hola" >INFO</button>
+<a href="./index.html" type="button" class="btn btn-dark hala ">LOGOUT</a></li></ul>
+</div>
+
+
+<!-- Editable table -->
+<div class="row">
+    <div class="col-sm-4 " margin-left:100px>
+        <div class="card">
+            <p class="card-header">Filter Expenses</p><hr>
+            <div class="card-body">
+                <form>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="from" class="col">From</label>
+                            <input class="form-control" type="date" id="from" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="to">To</label>
+                            <input class="form-control" type="date" id="to" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="min">Min</label>
+                            <input type="number" class="form-control" id="min" placeholder="$0">
+                        </div>
+                    </div>
+                    <div class="form-group row text-right">
+                        <div class="col-md-6">
+                            <label for="max">Max</label>
+                            <input type="number" class="form-control" id="max" placeholder="$1,0000">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label>Merchant</label>
+                        <div class="col">
+                            <select class="form-control">
+                                <option>Electronics</option>
+                                <option>Passport</option>
+                                <option>Rental car</option>
+                                <option>Taxi</option>
+                                <option>Airline</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div id="table" class="table-editable">
+                <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                        class="fa fa-plus fa-2x" aria-hidden="true"></i></a></span>
+                <table class="table table-bordered table-responsive-md table-striped text-center">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Merchant</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Comment</th>
+                        <th class="text-center">Sort</th>
+                        <th class="text-center">Remove</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="pt-3-half" contenteditable="true">10-04-2020</td>
+                        <td class="pt-3-half" contenteditable="true">Taxi</td>
+                        <td class="pt-3-half" contenteditable="true">500$</td>
+                        <td class="pt-3-half" contenteditable="true">In progress</td>
+                        <td class="pt-3-half" contenteditable="true">Expense from a business trip </td>
+                        <td class="pt-3-half">
+                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-arrow-up"
+                                aria-hidden="true"></i></a></span>
+                        <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-arrow-down"
+                                aria-hidden="true"></i></a></span>
+                        </td>
+                        <td>
+                        <span class="table-remove"><button type="button"
+                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                        </td>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                        <td class="pt-3-half" contenteditable="true">20-09-2020</td>
+                        <td class="pt-3-half" contenteditable="true">Airlines</td>
+                        <td class="pt-3-half" contenteditable="true">400$</td>
+                        <td class="pt-3-half" contenteditable="true">New</td>
+                        <td class="pt-3-half" contenteditable="true">Expense from a business trip</td>
+                        <td class="pt-3-half">
+                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-arrow-up"
+                                aria-hidden="true"></i></a></span>
+                        <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-arrow-down"
+                                aria-hidden="true"></i></a></span>
+                        </td>
+                        <td>
+                        <span class="table-remove"><button type="button"
+                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                        </td>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                        <td class="pt-3-half" contenteditable="true">09-09-2020</td>
+                        <td class="pt-3-half" contenteditable="true">Passport</td>
+                        <td class="pt-3-half" contenteditable="true">300$</td>
+                        <td class="pt-3-half" contenteditable="true">In progress</td>
+                        <td class="pt-3-half" contenteditable="true">Expense from a business trip</td>
+                        <td class="pt-3-half">
+                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-arrow-up"
+                                aria-hidden="true"></i></a></span>
+                        <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-arrow-down"
+                                aria-hidden="true"></i></a></span>
+                        </td>
+                        <td>
+                        <span class="table-remove"><button type="button"
+                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                        </td>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                        <td class="pt-3-half" contenteditable="true">05-05-2020</td>
+                        <td class="pt-3-half" contenteditable="true">Taxi</td>
+                        <td class="pt-3-half" contenteditable="true">200$</td>
+                        <td class="pt-3-half" contenteditable="true">New</td>
+                        <td class="pt-3-half" contenteditable="true">Expense from a business trip</td>
+                        <td class="pt-3-half">
+                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-arrow-up"
+                                aria-hidden="true"></i></a></span>
+                        <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-arrow-down"
+                                aria-hidden="true"></i></a></span>
+                        </td>
+                        <td>
+                        <span class="table-remove"><button type="button"
+                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="pt-3-half" contenteditable="true">04-04-2020</td>
+                      <td class="pt-3-half" contenteditable="true">Passport</td>
+                      <td class="pt-3-half" contenteditable="true">100$</td>
+                      <td class="pt-3-half" contenteditable="true">In progress</td>
+                      <td class="pt-3-half" contenteditable="true">Expense from a business trip</td>
+                      <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-arrow-up"
+                              aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-arrow-down"
+                              aria-hidden="true"></i></a></span>
+                      </td>
+                      <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                      </td>
+                   </tr>
+                  
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+
+</div>
+<!-- Editable table -->
+
+
+ 
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <!--<script src="j.js" > </script>-->
+  <script>
+	const $tableID = $('#table');
+ const $BTN = $('#export-btn');
+ const $EXPORT = $('#export');
+
+ const newTr = `
+<tr class="hide">
+  <td class="pt-3-half" contenteditable="true">Example</td>
+  <td class="pt-3-half" contenteditable="true">Example</td>
+  <td class="pt-3-half" contenteditable="true">Example</td>
+  <td class="pt-3-half" contenteditable="true">Example</td>
+  <td class="pt-3-half" contenteditable="true">Example</td>
+  <td class="pt-3-half">
+    <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-arrow-up aria-hidden="true"></i></i></a></span>
+    <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+  </td>
+  <td>
+    <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">Remove</button></span>
+  </td>
+</tr>`;
+
+ $('.table-add').on('click', 'i', () => {
+
+   const $clone = $tableID.find('tbody tr').last().clone(true).removeClass('hide table-line');
+
+   if ($tableID.find('tbody tr').length === 0) {
+
+     $('tbody').append(newTr);
+   }
+
+   $tableID.find('table').append($clone);
+ });
+
+ $tableID.on('click', '.table-remove', function () {
+
+   $(this).parents('tr').detach();
+ });
+
+ $tableID.on('click', '.table-up', function () {
+
+   const $row = $(this).parents('tr');
+
+   if ($row.index() === 0) {
+     return;
+   }
+
+   $row.prev().before($row.get(0));
+ });
+
+ $tableID.on('click', '.table-down', function () {
+
+   const $row = $(this).parents('tr');
+   $row.next().after($row.get(0));
+ });
+
+ // A few jQuery helpers for exporting only
+ jQuery.fn.pop = [].pop;
+ jQuery.fn.shift = [].shift;
+
+ $BTN.on('click', () => {
+
+   const $rows = $tableID.find('tr:not(:hidden)');
+   const headers = [];
+   const data = [];
+
+   // Get the headers (add special header logic here)
+   $($rows.shift()).find('th:not(:empty)').each(function () {
+
+     headers.push($(this).text().toLowerCase());
+   });
+
+   // Turn all existing rows into a loopable array
+   $rows.each(function () {
+     const $td = $(this).find('td');
+     const h = {};
+
+     // Use the headers from earlier to name our hash keys
+     headers.forEach((header, i) => {
+
+       h[header] = $td.eq(i).text();
+     });
+
+     data.push(h);
+   });
+
+   // Output the result
+   $EXPORT.text(JSON.stringify(data));
+ });
+</script>
+
+</body>
+</html>
